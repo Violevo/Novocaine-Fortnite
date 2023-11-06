@@ -60,7 +60,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
     		int main () {
  		 ofstream myfile;
  		 myfile.open ("config.json");
- 		 myfile << (save);
+ 		 std::cout << "Hello world!";
  		 myfile.close();
   		 return 0;
 		}

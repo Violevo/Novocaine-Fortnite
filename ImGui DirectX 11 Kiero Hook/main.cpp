@@ -52,8 +52,25 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
-
 	ImGui::Begin("Novocaine V1.0 - oli5730");
+	
+	ImGui::TextColored(ImVec4(1,1,0,1), "Save Config:");
+	
+	if (ImGui::Button("Save"))
+    		int main () {
+ 		 ofstream myfile;
+ 		 myfile.open ("config.json");
+ 		 myfile << (save);
+ 		 myfile.close();
+  		 return 0;
+		}
+		MySaveFunction();
+	
+	
+	ImGui::InputText("string", buf, IM_ARRAYSIZE(buf));
+	ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
+	
+		
 	ImGui::End();
 
 	ImGui::Render();

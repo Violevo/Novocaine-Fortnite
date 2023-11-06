@@ -1,4 +1,5 @@
 #include "includes.h"
+#include <iostream>
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 Present oPresent;
@@ -57,18 +58,12 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	ImGui::TextColored(ImVec4(1,1,0,1), "Save Config:");
 	
 	if (ImGui::Button("Save"))
-    		int main () {
- 		 ofstream myfile;
- 		 myfile.open ("config.json");
- 		 std::cout << "Hello world!";
- 		 myfile.close();
-  		 return 0;
-		}
-		MySaveFunction();
+		std::cout << "Hello world!";
+
+		
 	
 	
-	ImGui::InputText("string", buf, IM_ARRAYSIZE(buf));
-	ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
+	
 	
 		
 	ImGui::End();

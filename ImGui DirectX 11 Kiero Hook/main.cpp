@@ -1,5 +1,4 @@
 #include "includes.h"
-#include <iostream>
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 Present oPresent;
@@ -16,6 +15,9 @@ void InitImGui()
 	io.ConfigFlags = ImGuiConfigFlags_NoMouseCursorChange;
 	ImGui_ImplWin32_Init(window);
 	ImGui_ImplDX11_Init(pDevice, pContext);
+
+	
+
 }
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
@@ -53,19 +55,12 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
-	ImGui::Begin("Novocaine V1.0 - oli5730");
-	
-	ImGui::TextColored(ImVec4(1,1,0,1), "Save Config:");
-	
-	if (ImGui::Button("Save"))
-		std::cout << "Hello world!";
 
-		
+	ImGui::SetNextWindowSize(Imvec2(900, 450), NULL, ImGuiWindowFlags_NoResize);
+	ImGui::Begin(("Novocaine V1.0 - oli5730"));
 	
 	
 	
-	
-		
 	ImGui::End();
 
 	ImGui::Render();
